@@ -855,7 +855,7 @@ jQuery('#region').change(function () {
                       splitted = true;
                   }
                   
-                  if (biggestCluster[2] * 2.5 < m[0].size && biggestCluster[2] > m[0].size / 5 &&  biggestCluster[2] > 11 && !splitted && !splitting) {
+                  if (toggleSplit && biggestCluster[2] * 2.5 < m[0].size && biggestCluster[2] > m[0].size / 5 &&  biggestCluster[2] > 11 && !splitted && !splitting) {
                       drawLine(m[0].x, m[0].y, biggestCluster[0], biggestCluster[1], 4);
                       
                       var worthyTargetDistance = computeDistance(m[0].x, m[0].y, biggestCluster[0], biggestCluster[1]);
@@ -1238,9 +1238,10 @@ jQuery('#region').change(function () {
     var $,
     toggle = false,
     toggleDraw = false,
-	toggleMouseWheel = false,
-	toggleSizeColors = false,
-	toggleSimpleRender = false,
+	toggleSplit = false,
+	toggleMouseWheel = true,
+	toggleSizeColors = true,
+	toggleSimpleRender = true,
     splitted = false,
     splitting = false,
     virusBait = false,
